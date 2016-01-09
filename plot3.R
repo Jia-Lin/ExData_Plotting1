@@ -1,0 +1,6 @@
+png("plot3.png", width = 480, height = 480)
+plot(as.POSIXct(paste(as.Date(hpcc$Date, "%d/%m/%Y"), hpcc$Time), format="%Y-%m-%d %H:%M:%S"), hpcc$Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering")
+lines(as.POSIXct(paste(as.Date(hpcc$Date, "%d/%m/%Y"), hpcc$Time), format="%Y-%m-%d %H:%M:%S"), hpcc$Sub_metering_2, col = "red")
+lines(as.POSIXct(paste(as.Date(hpcc$Date, "%d/%m/%Y"), hpcc$Time), format="%Y-%m-%d %H:%M:%S"), hpcc$Sub_metering_3, col = "blue")
+legend("topright", legend = metering, lty=c(1, 1, 1), col=c("black", "red", "blue"))
+dev.off()
